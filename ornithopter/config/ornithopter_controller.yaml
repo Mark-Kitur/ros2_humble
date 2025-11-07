@@ -1,0 +1,22 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+
+    wing_controller:
+      type: position_controllers/JointGroupPositionController
+    tail_controller:
+      type: position_controllers/JointGroupPositionController
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+wing_controller:
+  ros__parameters:
+    joints: [joint_4, joint_6]
+    command_interfaces: [position]
+    state_interfaces: [position, velocity, effort]
+
+tail_controller:
+  ros__parameters:
+    joints: [joint_8, joint_10]
+    command_interfaces: [position]
+    state_interfaces: [position, velocity]

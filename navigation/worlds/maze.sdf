@@ -1,0 +1,140 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="maze">
+
+    <!-- Physics configuration -->
+    <physics name="default_physics" type="ode">
+      <max_step_size>0.003</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+
+    <!-- Global environment -->
+    <gravity>0 0 -9.8</gravity>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+
+    <!-- Directional light -->
+    <light name="sun" type="directional">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <!-- Ground plane -->
+    <model name="ground_plane">
+      <static>true</static>
+      <pose>0 0 0 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction><ode/></friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Outer border walls -->
+    <model name="border">
+      <static>true</static>
+      <pose>0 0 1 0 0 0</pose>
+
+      <!-- Left wall -->
+      <link name="wall1">
+        <pose>-10.005 0 0 0 0 0</pose>
+        <collision name="collision"><geometry><box><size>0.01 20 2</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>0.01 20 2</size></box></geometry>
+          <material><diffuse>0 0.1 0.2 1</diffuse></material></visual>
+      </link>
+
+      <!-- Right wall -->
+      <link name="wall2">
+        <pose>10.005 0 0 0 0 0</pose>
+        <collision name="collision"><geometry><box><size>0.01 20 2</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>0.01 20 2</size></box></geometry>
+          <material><diffuse>0 0.1 0.2 1</diffuse></material></visual>
+      </link>
+
+      <!-- Top wall -->
+      <link name="wall3">
+        <pose>0 10.005 0 0 0 0</pose>
+        <collision name="collision"><geometry><box><size>20 0.01 2</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>20 0.01 2</size></box></geometry>
+          <material><diffuse>0 0.1 0.2 1</diffuse></material></visual>
+      </link>
+
+      <!-- Bottom wall -->
+      <link name="wall4">
+        <pose>0 -10.005 0 0 0 0</pose>
+        <collision name="collision"><geometry><box><size>20 0.01 2</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>20 0.01 2</size></box></geometry>
+          <material><diffuse>0 0.1 0.2 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <!-- Maze obstacles -->
+    <model name="obstacles">
+      <static>true</static>
+      <pose>0 0 0.5 0 0 0</pose>
+
+      <!-- Walls 1–26 -->
+      <link name="wall1"><pose>-6.5 -9 0 0 0 0</pose><collision name="collision"><geometry><box><size>1 2 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>1 2 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall2"><pose>-3.5 -9 0 0 0 0</pose><collision name="collision"><geometry><box><size>1 2 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>1 2 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall3"><pose>-0.5 -9 0 0 0 0</pose><collision name="collision"><geometry><box><size>1 2 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>1 2 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall4"><pose>2.5 -9 0 0 0 0</pose><collision name="collision"><geometry><box><size>1 2 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>1 2 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall5"><pose>5.5 -9 0 0 0 0</pose><collision name="collision"><geometry><box><size>1 2 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>1 2 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall6"><pose>8.5 -9 0 0 0 0</pose><collision name="collision"><geometry><box><size>1 2 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>1 2 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall7"><pose>-8 7 0 0 0 0</pose><collision name="collision"><geometry><box><size>1 4 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>1 4 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall8"><pose>-8 2 0 0 0 0</pose><collision name="collision"><geometry><box><size>1 2 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>1 2 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall9"><pose>-8 -3 0 0 0 0</pose><collision name="collision"><geometry><box><size>1 2 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>1 2 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall10"><pose>-8 -8 0 0 0 0</pose><collision name="collision"><geometry><box><size>1 2 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>1 2 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall11"><pose>-4 -5 0 0 0 1.57</pose><collision name="collision"><geometry><box><size>1 3 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>1 3 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall12"><pose>-4 -2 0 0 0 0</pose><collision name="collision"><geometry><box><size>1 2 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>1 2 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall13"><pose>-4 1 0 0 0 1.57</pose><collision name="collision"><geometry><box><size>1 4 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>1 4 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall14"><pose>-4 5 0 0 0 0</pose><collision name="collision"><geometry><box><size>1 3 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>1 3 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall15"><pose>0 9 0 0 0 0</pose><collision name="collision"><geometry><box><size>2 2 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>2 2 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall16"><pose>0 6 0 0 0 0</pose><collision name="collision"><geometry><box><size>4 1 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>4 1 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall17"><pose>0 3 0 0 0 1.57</pose><collision name="collision"><geometry><box><size>1 3 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>1 3 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall18"><pose>0 0 0 0 0 0</pose><collision name="collision"><geometry><box><size>4 1 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>4 1 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall19"><pose>0 -3 0 0 0 1.57</pose><collision name="collision"><geometry><box><size>1 3 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>1 3 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall20"><pose>0 -6 0 0 0 0</pose><collision name="collision"><geometry><box><size>4 1 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>4 1 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall21"><pose>4 9 0 0 0 1.57</pose><collision name="collision"><geometry><box><size>1 2 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>1 2 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall22"><pose>4 6 0 0 0 0</pose><collision name="collision"><geometry><box><size>1 3 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>1 3 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall23"><pose>4 2 0 0 0 1.57</pose><collision name="collision"><geometry><box><size>1 4 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>1 4 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall24"><pose>4 -2 0 0 0 0</pose><collision name="collision"><geometry><box><size>1 3 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>1 3 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall25"><pose>8 4 0 0 0 0</pose><collision name="collision"><geometry><box><size>1 6 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>1 6 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+      <link name="wall26"><pose>8 -3 0 0 0 1.57</pose><collision name="collision"><geometry><box><size>1 4 1</size></box></geometry></collision><visual name="visual"><geometry><box><size>1 4 1</size></box></geometry><material><diffuse>0 0.1 0.2 1</diffuse></material></visual></link>
+    </model>
+
+  </world>
+</sdf>
