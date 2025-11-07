@@ -10,15 +10,15 @@ log/
 COLCON_IGNORE
 
 # Python cache files
-__pycache__/
+**/__pycache__/
 *.pyc
 *.pyo
 
-# test folders
+# Ignore tests (optional – comment out if you want to keep test files)
 **/test/
 **/tests/
 
-# VSCode and editor configs
+# Editor & IDE configs
 .vscode/
 .idea/
 *.swp
@@ -33,13 +33,12 @@ __pycache__/
 .snapshots/
 TestResults.xml
 
-# ROS 2 packages to exclude (optional)
+# PX4-related repositories (usually large, external)
 px4_controller/
 PX4-Autopilot/
 px4_msgs/
 
-### AL (Dynamics 365) ###
-#Template for AL projects for Dynamics 365 Business Central
+# AL / Business Central artifacts (legacy or unrelated)
 .alcache/
 .alpackages/
 .snapshots/
@@ -48,3 +47,8 @@ px4_msgs/
 rad.json
 *.g.xlf
 *.flf
+
+# Keep important ROS2 packages (ensure these stay tracked)
+!cart_pole/
+!navigation/
+!ornithopter/
