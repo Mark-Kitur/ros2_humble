@@ -1,22 +1,46 @@
-### AL ###
-#Template for AL projects for Dynamics 365 Business Central
-#launch.json folder
+### ROS 2 Workspace ###
+# Build and install artifacts
+build/
+install/
+log/
+
+# Colcon metadata
+.colcon/
+.colcon_ignore
+COLCON_IGNORE
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# VSCode and editor configs
 .vscode/
-#Cache folder
-.alcache/
-#Symbols folder
-.alpackages/
-#Snapshots folder
-.snapshots/
-#Testing Output folder
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.bak
+
+# Launch and testing outputs
 .output/
-#Extension App-file
-*.app
-#Rapid Application Development File
-rad.json
-#Translation Base-file
-*.g.xlf
-#License-file
-*.flf
-#Test results file
+.snapshots/
 TestResults.xml
+
+# ROS 2 packages to exclude (optional)
+px4_controller/
+PX4-Autopilot/
+px4_msgs/
+
+### AL (Dynamics 365) ###
+#Template for AL projects for Dynamics 365 Business Central
+.alcache/
+.alpackages/
+.snapshots/
+.output/
+*.app
+rad.json
+*.g.xlf
+*.flf
