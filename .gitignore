@@ -14,6 +14,10 @@ __pycache__/
 *.pyc
 *.pyo
 
+# test folders
+**/test/
+**/tests/
+
 # VSCode and editor configs
 .vscode/
 .idea/
