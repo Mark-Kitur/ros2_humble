@@ -40,9 +40,7 @@ Modeled the ornithopter’s multi-link wings in Gazebo using URDF and STL meshes
 
 Implemented a ROS 2 control node to generate periodic wing motion and monitor flight dynamics.
 
-Explored challenges in flapping-wing aerodynamics and control stability.
 
-Integrated the design into the PX4 ecosystem for future autopilot testing.
 
 Key learning:
 
