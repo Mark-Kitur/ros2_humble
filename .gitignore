@@ -23,6 +23,8 @@ COLCON_IGNORE
 .idea/
 *.swp
 *.swo
+*.cfg
+
 
 # Temporary files
 *.tmp
@@ -37,6 +39,9 @@ TestResults.xml
 px4_controller/
 PX4-Autopilot/
 px4_msgs/
+bird_aerodynamic/
+resource/
+
 
 # AL / Business Central artifacts (legacy or unrelated)
 .alcache/

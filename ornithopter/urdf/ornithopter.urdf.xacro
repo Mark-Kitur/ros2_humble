@@ -5,7 +5,7 @@
   <link name="platform">
     <inertial>
       <origin xyz="0 0.03 0" rpy="0 0 0"/>
-      <mass value="0.00002"/>
+      <mass value="0.2"/>
       <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
     </inertial>
     <visual>
@@ -33,7 +33,7 @@
   <link name="base_link">
     <inertial>
       <origin xyz="0 0 0.0" rpy="0 0 0"/>
-      <mass value="0.0001"/>
+      <mass value="0.9"/>
       <inertia ixx="0.05" ixy="0.0" ixz="0.0" iyy="0.08" iyz="0.0" izz="0.08"/>
     </inertial>
     <visual>
@@ -52,7 +52,7 @@
   <link name="link_4">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="0.000004"/>
+      <mass value="0.4"/>
       <inertia ixx="0.005" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
     </inertial>
     <visual>
@@ -92,7 +92,7 @@
   <link name="link_6">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="0.000004"/>
+      <mass value="0.4"/>
       <inertia ixx="0.005" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
     </inertial>
     <visual>
@@ -134,7 +134,7 @@
   <link name="link_8">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="0.00004"/>
+      <mass value="0.4"/>
       <inertia ixx="0.005" ixy="0.0" ixz="0.0" iyy="0.005" iyz="0.0" izz="0.005"/>
     </inertial>
     <visual>
@@ -161,7 +161,7 @@
   <link name="link_10">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="0.00004"/>
+      <mass value="0.4"/>
       <inertia ixx="0.005" ixy="0.0" ixz="0.0" iyy="0.005" iyz="0.0" izz="0.005"/>
     </inertial>
     <visual>
@@ -246,11 +246,11 @@
     <plugin name="left_wing_aero" filename="libLiftDragPlugin.so">
       <link_name>link_4</link_name>
       <!--direction-->
-      <forward>0 0 1</forward>
-      <upward>0 0 0</upward>
+      <forward>1 0 0</forward>
+      <upward>0 1 0</upward>
       <cp>0 0.05 -0.16</cp>
       <!-- geometry -->
-      <area>0.25</area>
+      <area>0.000000105</area>
       <fluid_density>1.225</fluid_density>
       <!-- aerodynamic coefficients -->
       <alpha_stall>0.5</alpha_stall>
@@ -266,11 +266,11 @@
     <plugin name="right_wing_aero" filename="libLiftDragPlugin.so">
       <link_name>link_6</link_name>
       <!--direction-->
-      <forward>0 0 1</forward>
+      <forward>1 0 0</forward>
       <upward>0 1 0</upward>
       <cp>-0.12 0 0.12</cp>
       <!-- geometry -->
-      <area>0.25</area>
+      <area>0.000000105</area>
       <fluid_density>1.225</fluid_density>
       <!-- aerodynamic coefficients -->
       <alpha_stall>0.5</alpha_stall>
