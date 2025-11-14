@@ -26,6 +26,8 @@ setup(
         'console_scripts': [
             'cam_pub=camera_reader.camera_publisher:main',
             "distance_calc=camera_reader.distance_calculator:main",
+            "aruco=camera_reader.auroc:main",
+            "obj=camera_reader.objection_detection:main",
         ],
     },
 )

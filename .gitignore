@@ -41,6 +41,7 @@ PX4-Autopilot/
 px4_msgs/
 bird_aerodynamic/
 resource/
+gazebo_world
 
 
 # AL / Business Central artifacts (legacy or unrelated)

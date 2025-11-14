@@ -30,7 +30,7 @@ class DepthDistanceCalculator(Node):
     def image_callback(self,msg):
         self.color_image = self.bridge.imgmsg_to_cv2(msg,"bgr8")
         if self.color_image is not None and self.distance is not None:
-            self.display_annoted_image()
+            self.display_annotated_image()
 
     def depth_callback(self,msg):
         self.depth_image = self.bridge.imgmsg_to_cv2(msg, "32FC1")
