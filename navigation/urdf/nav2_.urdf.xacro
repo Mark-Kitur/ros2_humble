@@ -137,6 +137,26 @@
     <origin xyz="0.3 0 0.075" rpy="0 0 0"/> <!-- touches ground -->
   </joint>
 
+  <link name="depth_link"/>
+
+<joint name="depth_link_joint" type="fixed">
+  <origin xyz="0 0 0.1" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="depth_link"/>
+</joint>
+
+<gazebo reference="depth_link">
+  <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro"/>
+  <xacro:sensor_d435 parent="depth_link" 
+                     use_nominal_extrinsics="true" 
+                     add_plug="false" 
+                     use_mesh="true">
+    <origin xyz="0 0 0.1" rpy="0 0 0"/>
+  </xacro:sensor_d435>
+
+</gazebo>
+
+
   <!-- Lidar link -->
   <link name="lidar_link">
     <visual>
