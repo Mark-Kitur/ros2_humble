@@ -24,6 +24,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'yolov8=yolo_seek.yolov8:main',
+            'yolo_detector=yolo_seek.yolo_detector:main',
         ],
     },
 )
