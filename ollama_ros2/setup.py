@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'yolo_seek'
+package_name = 'ollama_ros2'
 
 setup(
     name=package_name,
@@ -24,9 +24,6 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'yolov8=yolo_seek.yolov8:main',
-            'yolo_detector=yolo_seek.yolo_detector:main',
-            'tes=yolo_seek.tes:main',
         ],
     },
 )
