@@ -98,8 +98,8 @@ def generate_launch_description():
     ld.add_action(gazebo_node)
     ld.add_action(robot_state_publisher)
     ld.add_action(spawn_node)
-    ld.add_action(ros_bridge)
+    #ld.add_action(ros_bridge)
     ld.add_action(robot_localization_node)
     ld.add_action(joint_state_publisher_node)
-    ld.add_action(rviz_node)
+    #ld.add_action(rviz_node)
     return ld

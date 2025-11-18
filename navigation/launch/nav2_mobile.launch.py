@@ -114,7 +114,7 @@ def generate_launch_description():
     ld.add_action(robot_state_publisher_node)
     ld.add_action(gazebo_node)           # start Gazebo first
     ld.add_action(spawn_node)            # spawn robot after Gazebo is ready
-    ld.add_action(bridge)                # start bridge after robot is spawned
+    #ld.add_action(bridge)                # start bridge after robot is spawned
     #ld.add_action(base)
     ld.add_action(joint_state_publisher_node)
     ld.add_action(rviz_node)             # start RViz last
